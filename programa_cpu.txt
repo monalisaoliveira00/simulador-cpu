@@ -1,4 +1,0 @@
-# Simples programa que imprime "Olá, mundo!"
-
-PRINT "Olá, mundo!"
-HLT
