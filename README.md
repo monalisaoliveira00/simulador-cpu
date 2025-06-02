@@ -25,8 +25,8 @@ Além disso, ele também pode ser usado para demonstrar o entendimento de lógic
 ### 2. Clone o repositório
 
 ```bash
-git clone https://github.com/paulo-bento/simulador-cpu-python.git
-cd simulador-cpu-python
+git clone https://github.com/monalisaoliveira00/simulador-cpu.git.
+cd simulador-cpu
 ```
 
 ### 3. Crie um arquivo de instruções (exemplo `programa_cpu.txt`)
