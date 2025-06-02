@@ -1,188 +1,61 @@
-Simulador de Escalonamento de Processos na CPU
-Este projeto é um Simulador de Escalonamento de Processos desenvolvido em Python que implementa diferentes algoritmos clássicos de escalonamento, permitindo observar e comparar o comportamento de cada um em relação ao tempo de execução, espera e eficiência.
+# 🧠 Simulador de CPU em Python
 
-🎯 Objetivo
+Este projeto é um simulador de CPU simples desenvolvido em Python. Ele interpreta e executa um conjunto reduzido de instruções similares às de uma linguagem Assembly, permitindo simular operações básicas de carregamento, armazenamento, soma e saída de dados.
 
-O objetivo deste simulador é fornecer uma ferramenta educacional e prática para a compreensão dos principais algoritmos de escalonamento de processos utilizados em sistemas operacionais, facilitando o aprendizado sobre como o gerenciamento de processos impacta o desempenho do sistema.
+## 📌 O que o projeto faz
 
-⚙️ Funcionalidades
+O simulador executa instruções escritas em um arquivo `.txt` e simula o comportamento de uma CPU com registradores e memória. A cada instrução executada, o estado da CPU é exibido, incluindo o conteúdo dos registradores e posições relevantes da memória.
 
-✅ Entrada de processos com tempo de chegada e duração.
-✅ Simulação de múltiplos algoritmos de escalonamento.
-✅ Cálculo automático de:
+## 💡 Por que o projeto é útil
 
-Tempo de Espera
+Este simulador é útil para entender como funciona a execução de instruções de uma CPU em nível baixo, mesmo que não seja um projeto com fins exclusivamente didáticos. Ele ajuda a visualizar conceitos como:
 
-Tempo de Turnaround
+* Manipulação de registradores
+* Acesso e modificação da memória
+* Execução sequencial de instruções
 
-Tempo de Resposta (se aplicável)
-✅ Exibição clara da ordem de execução e estatísticas.
-✅ Possibilidade de comparar diferentes algoritmos.
+Além disso, ele também pode ser usado para demonstrar o entendimento de lógica de programação e estruturas de controle.
 
-📚 Algoritmos Implementados
+## 🚀 Como começar a usar o projeto
 
-FCFS (First Come, First Served)
-Ordem de chegada dos processos.
+### 1. Pré-requisitos
 
-SJF (Shortest Job First)
-Processo com a menor duração executa primeiro.
+* Python 3.6 ou superior
 
-Round Robin
-Processos recebem uma fatia de tempo (quantum) para execução, promovendo justiça.
+### 2. Clone o repositório
 
-Prioridade (se implementado)
-Executa processos com base em prioridade definida.
+```bash
+git clone https://github.com/paulo-bento/simulador-cpu-python.git
+cd simulador-cpu-python
+```
 
-🛠️ Tecnologias Utilizadas
+### 3. Crie um arquivo de instruções (exemplo `programa_cpu.txt`)
 
-Python 3.x — linguagem de programação.
+```assembly
+# Programa simples que imprime "Olá, mundo!"
 
-Bibliotecas Padrão — Não há dependências externas.
+PRINT "Olá, mundo!"
+HLT
+```
 
-🏁 Como Executar
-1️⃣ Pré-requisitos
-Ter o Python 3.x instalado.
+### 4. Execute o simulador com o caminho completo
 
-Sistema operacional: Windows, Linux ou macOS.
+```bash
+python simulador_cpu.py programa_cpu.txt
+```
+Certifique-se de estar na mesma pasta onde os arquivos `simulador_cpu.py` e `programa_cpu.txt` estão salvos.
 
-2️⃣ Clonar o Repositório
+O simulador irá interpretar o arquivo e mostrar a execução passo a passo no terminal.
 
-bash
-Copiar
-Editar
-git clone https://github.com/seu-usuario/simulador-escalonamento-cpu.git
-cd simulador-escalonamento-cpu
-ou apenas baixe o arquivo simulador_cpu.py.
+## 👥 Manutenção e contribuições
 
-3️⃣ Executar o Script
+Este projeto é mantido por:
 
-bash
-Copiar
-Editar
-python simulador_cpu.py
+* João Paulo Bento de Lucena
+* Monalisa Fernandes de Oliveira
 
-📥 Entrada de Dados
+Contribuições externas não estão abertas no momento, pois trata-se de um projeto específico para entrega acadêmica.
 
-Ao executar o script, o usuário deverá informar:
+---
 
-Número de processos a serem simulados.
-
-Para cada processo:
-
-Tempo de chegada (em unidades de tempo).
-
-Tempo de duração (em unidades de tempo).
-
-Prioridade (se aplicável).
-
-Escolha do algoritmo de escalonamento.
-
-Exemplo de entrada:
-
-plaintext
-Copiar
-Editar
-Digite o número de processos: 3
-
-Processo 1 - Tempo de chegada: 0
-Processo 1 - Duração: 5
-
-Processo 2 - Tempo de chegada: 2
-Processo 2 - Duração: 3
-
-Processo 3 - Tempo de chegada: 4
-Processo 3 - Duração: 1
-
-Escolha o algoritmo:
-
-1 - FCFS
-2 - SJF
-3 - Round Robin
-4 - Prioridade
-Se for Round Robin, o sistema pedirá também o quantum.
-
-📊 Saída de Dados
-
-Após a execução da simulação, o programa exibirá:
-
-✅ Ordem de execução dos processos.
-✅ Tempos individuais de espera e turnaround.
-✅ Tempos médios de espera e turnaround.
-
-Exemplo de saída:
-
-plaintext
-Copiar
-Editar
-Ordem de execução: P1 -> P2 -> P3
-
-Tempo de espera:
-P1: 0
-P2: 3
-P3: 6
-
-Tempo médio de espera: 3.0
-
-Tempo de turnaround:
-P1: 5
-P2: 6
-P3: 7
-
-Tempo médio de turnaround: 6.0
-
-📝 Estrutura do Código
-
-Classe Process
-Representa cada processo com atributos como ID, tempo de chegada, duração, prioridade, etc.
-
-Funções de Escalonamento
-Cada algoritmo é implementado em uma função específica.
-
-Função Principal (main)
-Responsável por coletar entradas, executar o algoritmo escolhido e exibir os resultados.
-
-✨ Exemplos de Uso
-
-Comparar o tempo médio de espera entre FCFS e SJF para um mesmo conjunto de processos.
-
-Analisar o impacto da variação do quantum no algoritmo Round Robin.
-
-Observar como a prioridade altera a ordem de execução (se implementado).
-
-🚀 Possíveis Melhorias
-
-Implementar visualização gráfica do Gantt Chart.
-
-Adicionar suporte para processos com tempo de bloqueio (I/O).
-
-Implementar outros algoritmos como SRTF (Shortest Remaining Time First).
-
-Criar uma interface gráfica (GUI) usando Tkinter ou PyQt.
-
- Por que usar este simulador?
-
-✅ Simples e didático.
-✅ Não depende de bibliotecas externas.
-✅ Facilita o aprendizado prático sobre sistemas operacionais.
-✅ Código limpo, comentado e facilmente extensível.
-
-📄 Licença
-
-Este projeto está licenciado sob a MIT License.
-Sinta-se livre para usar, modificar e distribuir.
-
-🤝 Contribuições
-
-Contribuições são bem-vindas!
-
-Abra uma issue para sugerir melhorias ou reportar bugs.
-
-Envie um pull request com novas funcionalidades ou correções.
-
-👤 Autor
-Seu Nome
-GitHub
-LinkedIn
-
-📬 Contato
-Em caso de dúvidas ou sugestões, entre em contato pelo e-mail: seuemail@dominio.com.
+Feito com auxílio de IA generativa para o curso de Análise e Desenvolvimento de Sistemas.
